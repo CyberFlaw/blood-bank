@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@material-ui/core";
+
+import Quote from "./components/Quote";
+import Navbar from "./components/Navbar";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <div className="container">
+        <div className="box">
+          <div className="up">
+            <p>Blood Bank</p>
+          </div>
+          <div className="down">
+            <p>An initiative from GEC SFI</p>
+          </div>
+          <div className="donate-block">
+            <Button variant="outlined" color="secondary">
+              <Link
+                to="/donate"
+                style={{ textDecoration: "none", color: "Red" }}
+              >
+                Join Us
+              </Link>
+            </Button>
+          </div>
+          <div className="footer">
+            <Quote />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

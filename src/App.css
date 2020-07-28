@@ -1,38 +1,92 @@
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  height: 100vh;
+  width: 100%;
+  background: url("./assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "box .";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.up p {
+  font-size: 82px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.down p {
+  font-family: "Oswald", sans-serif;
+  font-weight: 100;
+  color: white;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav {
+  display: flex;
+  color: white;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.box {
+  display: grid;
+  grid-template-rows: 40vh 5vh 45vh 10vh;
+  grid-template-areas: "up" "down" "donate-block" "footer";
+}
+
+.up {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  left: 25px;
+}
+
+.down {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 1rem;
+  position: relative;
+  top: -10px;
+  left: 125px;
+}
+
+.donate-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -100px;
+  left: 25px;
+}
+
+.donate {
+  height: 60px;
+  width: 140px;
+  border-radius: 1rem;
+  font-size: 18px;
+  background: #ffd3d3;
+  color: #220000;
+  font-weight: 500;
+}
+
+.footer {
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  position: relative;
+  left: 10rem;
 }
