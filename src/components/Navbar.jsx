@@ -16,8 +16,11 @@ import about from "../assets/navbar/about.svg";
 import help from "../assets/navbar/help.svg";
 import home from "../assets/navbar/home.svg";
 import donate from "../assets/navbar/donate.svg";
+import search from "../assets/navbar/search.svg";
+import handshake from "../assets/navbar/agreement.svg";
 
 const iconList = [home, help, about];
+const actionIconList = [handshake, search, donate];
 
 const useStyles = makeStyles({
   list: {
@@ -76,23 +79,24 @@ export default function Navbar() {
       </List>
       <Divider />
       <List>
-        <ListItemIcon>
-          <img
-            src={donate}
-            alt="donate"
-            style={{
-              height: 35,
-              width: 35,
-              position: "relative",
-              top: 10,
-              marginLeft: 15,
-              marginRight: 20,
-            }}
-          />
-        </ListItemIcon>
-        <Link to="/donate" style={{ textDecoration: "none", color: "Black" }}>
-          Join Us
-        </Link>
+        {["Join Us", "Search Donor", "Request Blood"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              <img
+                src={actionIconList[index]}
+                alt={actionIconList[index]}
+                style={{
+                  height: 30,
+                  width: 30,
+                  marginBottom: 25,
+                  position: "relative",
+                  top: 10,
+                }}
+              />
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
       </List>
     </div>
   );

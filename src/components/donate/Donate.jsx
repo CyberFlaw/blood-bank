@@ -147,7 +147,7 @@ export default function Donate() {
               <MenuItem value={"CSE"}>CSE</MenuItem>
               <MenuItem value={"EC"}>EC</MenuItem>
               <MenuItem value={"EEE"}>EEE</MenuItem>
-              <MenuItem value={"Mech"}>Mech</MenuItem>
+              <MenuItem value={"Mech"}>Mechanical</MenuItem>
               <MenuItem value={"Production"}>Production</MenuItem>
               <MenuItem value={"Chemical"}>Chemical</MenuItem>
               <MenuItem value={"Civil"}>Civil</MenuItem>
@@ -170,7 +170,11 @@ export default function Donate() {
               <MenuItem value={"B-"}>B-</MenuItem>
               <MenuItem value={"AB-"}>AB-</MenuItem>
             </Select>
-            <div style={{ height: 20 }}></div>
+            <div style={{ height: 1 }}></div>
+
+            <TextField id="name" label="Weight (in KG)" type="number" />
+
+            <div style={{ height: 5 }}></div>
             <InputLabel id="health">Any Health Conditions?</InputLabel>
             <RadioGroup
               aria-label="health"
@@ -181,7 +185,7 @@ export default function Donate() {
               <FormControlLabel value="true" control={<Radio />} label="Yes" />
               <FormControlLabel value="false" control={<Radio />} label="No" />
             </RadioGroup>
-            <div style={{ height: 20 }}></div>
+            <div style={{ height: 10 }}></div>
             <Button variant="contained" color="primary">
               Submit
             </Button>

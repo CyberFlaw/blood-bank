@@ -85,7 +85,7 @@ nav {
 
 .footer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-start;
   position: relative;
   left: 10rem;

@@ -27,6 +27,19 @@ function App() {
                 Join Us
               </Link>
             </Button>
+            <Button variant="outlined" color="secondary">
+              <Link
+                to="/search"
+                style={{ textDecoration: "none", color: "green" }}
+              >
+                Search Donor
+              </Link>
+            </Button>
+            <Button variant="outlined" color="secondary">
+              <Link to="/" style={{ textDecoration: "none", color: "blue" }}>
+                Request Blood
+              </Link>
+            </Button>
           </div>
           <div className="footer">
             <Quote />
