@@ -16,7 +16,7 @@ function App() {
             <p>Blood Bank</p>
           </div>
           <div className="down">
-            <p>An initiative from GEC SFI</p>
+            <p>An SFI GEC Initiative</p>
           </div>
           <div className="donate-block">
             <Button variant="outlined" color="secondary">
