@@ -11,6 +11,13 @@ const dataModel = monoose.Schema({
 
     max: 225,
   },
+  phonenumber: {
+    type: String,
+    max: 10,
+  },
+  age: {
+    type: Number,
+  },
   gender: {
     type: String,
   },

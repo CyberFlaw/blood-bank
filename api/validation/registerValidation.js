@@ -4,6 +4,8 @@ const registerValidation = (body) => {
   const schema = {
     name: Joi.string().required().max(50),
     email: Joi.string().min(6).email().required(),
+    phonenumber: Joi.string().max(10).required(),
+    age: Joi.number().required(),
     gender: Joi.string().required(),
     sem: Joi.string().required(),
     branch: Joi.string().required(),

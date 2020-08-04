@@ -1,0 +1,17 @@
+{
+    "name": "sasi3",
+    "email": "ssdssadadamp@mail.com",
+    "phonenumber":"8921760744",
+    "age": 17,
+    "gender": "male",
+    "sem": "s3",
+    "branch": "cse",
+    "weight": 52,
+    "bloodtype": "a+",
+    "healthcon": "no"
+}
+
+{
+"branch":"cse",
+"bloodtype": "a+"
+}

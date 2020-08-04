@@ -6,6 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 8888;
 
 const authRoute = require("./routes/auth");
+const searchRoute = require("./routes/search");
 
 mongoos.connect(
   process.env.DB_CONNECT,
@@ -22,6 +23,7 @@ mongoos.connect(
 app.use(express.json());
 
 app.use("/api/user", authRoute);
+app.use("/api/user", searchRoute);
 
 app.get("/", (req, res) => {
   res.send("Api on your service...");

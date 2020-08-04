@@ -18,20 +18,34 @@
 }
 
 .card {
-  border: 3px solid #708090;
+  border: 3px solid #708080;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  width: 30%;
+}
+
+.search {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 }
 
-.block {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+.title {
+  font-family: "Oswald", sans-serif;
+  font-size: 34px;
+  font-weight: 200;
+}
+
+.results {
+  flex: 1;
 }
