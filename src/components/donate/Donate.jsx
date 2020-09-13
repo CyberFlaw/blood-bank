@@ -12,6 +12,29 @@ import Button from "@material-ui/core/Button";
 
 import "./Donate.min.css";
 
+// const targetLink = "http://localhost:8888/api/user/register";
+
+// let data = {
+//   "name": 'sadw',
+//   "email": "sissdamp@mail.com",
+//   "gender": "male",
+//   "age": 35,
+//   "sem": "s3",
+//   "branch": "cse",
+//   "weight": 52,
+//   "bloodtype": "a+",
+//   "healthcon": "no",
+// };
+
+// const requestOptions = {
+//   method: "POST",
+//   headers: {
+//     "Content-Type": "application/json",
+//     "Access-Control-Allow-Origin": targetLink,
+//   },
+//   body: JSON.stringify(data),
+// };
+
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
@@ -61,31 +84,11 @@ export default function Donate() {
   const handleHealthConditionChange = (event) => setHealth(event.target.value);
 
   const handleClick = (event) => {
-    const targetLink = "http://localhost:8888/api/user/register";
-
-    let data = {
-      name: "sasi",
-      email: "sissdamp@mail.com",
-      gender: "male",
-      sem: "s3",
-      branch: "cse",
-      weight: 52,
-      bloodtype: "a+",
-      healthcon: "no",
-    };
-
-    const requestOptions = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": targetLink,
-      },
-      body: JSON.stringify(data),
-    };
-    fetch(targetLink, requestOptions)
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
+    // fetch(targetLink, requestOptions)
+    //   .then((res) => res.json())
+    //   .then((data) => console.log(data))
+    //   .catch((err) => console.log(err));
+      console.log("Clicked");
   };
 
   return (
@@ -218,7 +221,7 @@ export default function Donate() {
               <FormControlLabel value="false" control={<Radio />} label="No" />
             </RadioGroup>
             <div style={{ height: 10 }}></div>
-            <Button variant="contained" color="primary" onClick={handleClick}>
+            <Button variant="contained" color="primary" onClick={handleClick} style={{marginTop: -15}}>
               Submit
             </Button>
           </form>

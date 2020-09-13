@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoos = require("mongoose");
+const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8888;
 const authRoute = require("./routes/auth");
 const searchRoute = require("./routes/search");
 
-mongoos.connect(
+mongoose.connect(
   process.env.DB_CONNECT,
   { useUnifiedTopology: true, useNewUrlParser: true },
   (err) => {
