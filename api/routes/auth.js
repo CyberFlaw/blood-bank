@@ -30,7 +30,7 @@ router.post("/register", async (req, res) => {
         branch: req.body.branch,
         weight: req.body.weight,
         bloodtype: req.body.bloodtype,
-        healthcon: req.body.healthcondition,
+        healthcon: req.body.healthcon,
       });
       try {
         const saveUser = await user.save();

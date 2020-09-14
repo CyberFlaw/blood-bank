@@ -12,11 +12,12 @@ import Button from "@material-ui/core/Button";
 
 import "./Donate.min.css";
 
-// const targetLink = "http://localhost:8888/api/user/register";
+const targetLink = "http://localhost:8888/api/user/register";
 
 // let data = {
-//   "name": 'sadw',
+//   "name": "sadw",
 //   "email": "sissdamp@mail.com",
+//   "phonenumber": "9876543210",
 //   "gender": "male",
 //   "age": 35,
 //   "sem": "s3",
@@ -26,14 +27,16 @@ import "./Donate.min.css";
 //   "healthcon": "no",
 // };
 
-// const requestOptions = {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//     "Access-Control-Allow-Origin": targetLink,
-//   },
-//   body: JSON.stringify(data),
-// };
+const requestOptions = data => {
+  return {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": targetLink,
+    },
+    body: JSON.stringify(data)
+  };
+};
 
 const useStyles = makeStyles({
   root: {
@@ -54,6 +57,21 @@ const useStyles = makeStyles({
 
 export default function Donate() {
   const classes = useStyles();
+
+  const [name, setName] = React.useState("");
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const [email, setEmail] = React.useState("");
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const [phno, setPhno] = React.useState("");
+  const handlePhnoChange = (event) => {
+    setPhno(event.target.value);
+  };
 
   const [age, setAge] = React.useState("");
   const handleAgeChange = (event) => {
@@ -80,14 +98,31 @@ export default function Donate() {
     setValue(event.target.value);
   };
 
+  const [weight, setWeight] = React.useState("");
+  const handleWeightChange = (event) => {
+    setWeight(event.target.value);
+  };
+
   const [health, setHealth] = React.useState("");
   const handleHealthConditionChange = (event) => setHealth(event.target.value);
 
   const handleClick = (event) => {
-    // fetch(targetLink, requestOptions)
-    //   .then((res) => res.json())
-    //   .then((data) => console.log(data))
-    //   .catch((err) => console.log(err));
+    let data = {
+      "name": name,
+      "email": email,
+      "phonenumber": phno,
+      "gender": value,
+      "age": age,
+      "sem": semester,
+      "branch": branch,
+      "weight": weight,
+      "bloodtype": blood,
+      "healthcon": health ? "Yes" : "No"
+    };
+    fetch(targetLink, requestOptions(data))
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
       console.log("Clicked");
   };
 
@@ -107,13 +142,30 @@ export default function Donate() {
       <Card className="card" variant="outlined">
         <div className="block">
           <form className={classes.root} noValidate autoComplete="off">
-            <TextField id="name" label="Name" />
+            <TextField 
+              id="name"
+              label="Name"
+              value={name}
+              onChange={handleNameChange}
+            />
 
-            <TextField id="name" label="Email" type="email" />
+            <TextField
+              id="name"
+              label="Email"
+              type="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
             <div style={{ height: 1 }}></div>
 
-            <TextField id="phone-number" label="Phone number" />
+            <TextField
+              id="phone-number"
+              label="Phone number"
+              value={phno}
+              onChange={handlePhnoChange}
+            />
             <div style={{ height: 10 }}></div>
+
             <InputLabel id="age">Age</InputLabel>
             <Select
               labelId="age"
@@ -207,7 +259,13 @@ export default function Donate() {
             </Select>
             <div style={{ height: 1 }}></div>
 
-            <TextField id="name" label="Weight (in KG)" type="number" />
+            <TextField
+              id="name"
+              label="Weight (in KG)"
+              type="number"
+              value={weight}
+              onChange={handleWeightChange}
+            />
 
             <div style={{ height: 5 }}></div>
             <InputLabel id="health">Any Health Conditions?</InputLabel>
