@@ -20,6 +20,7 @@ mongoose.connect(
   }
 );
 
+app.use(require("cors")())
 app.use(express.json());
 
 app.use("/api/user", authRoute);
