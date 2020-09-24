@@ -9,7 +9,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
   height: 100vh;
   width: 100%;
   filter: blur(5px);
@@ -31,6 +30,8 @@
   height: 80vh;
   width: 30%;
   min-width: 25rem;
+  overflow-y: scroll;
+  overflow: scroll;
 }
 
 .search {
@@ -55,18 +56,32 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
-  width: 20rem;
-  max-height: 10vh;
+  justify-content: center;
+  width: 15rem;
+  height: 20vh;
+  max-height: 50vh;
   margin-top: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
 }
 
 p {
   font-size: 1.4rem;
   font-weight: 200;
+  margin-left: 1rem;
 }
 
 h3 {
   font-size: 1rem;
   font-weight: 200;
+  margin-left: 1rem;
+}
+
+.display {
+  overflow-y: scroll;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
@@ -21,6 +21,7 @@ import handshake from "../assets/navbar/agreement.svg";
 
 const iconList = [home, help, about];
 const actionIconList = [handshake, search, donate];
+const routes = ["/donate", "/search", "/#"];
 
 const useStyles = makeStyles({
   list: {
@@ -80,22 +81,28 @@ export default function Navbar() {
       <Divider />
       <List>
         {["Join Us", "Search Donor", "Request Blood"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              <img
-                src={actionIconList[index]}
-                alt={actionIconList[index]}
-                style={{
-                  height: 30,
-                  width: 30,
-                  marginBottom: 25,
-                  position: "relative",
-                  top: 10,
-                }}
-              />
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+          <Link
+            to={routes[index]}
+            style={{ textDecoration: "none", color: "black" }}
+            key={index}
+          >
+            <ListItem button key={text}>
+              <ListItemIcon>
+                <img
+                  src={actionIconList[index]}
+                  alt={actionIconList[index]}
+                  style={{
+                    height: 30,
+                    width: 30,
+                    marginBottom: 25,
+                    position: "relative",
+                    top: 10,
+                  }}
+                />
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          </Link>
         ))}
       </List>
     </div>
