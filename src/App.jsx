@@ -12,32 +12,25 @@ function App() {
       <Navbar />
       <div className="container">
         <div className="box">
-          <div className="up">
-            <p>Blood Bank</p>
-          </div>
-          <div className="down">
-            <p>An SFI GEC Initiative</p>
-          </div>
           <div className="donate-block">
             <Button variant="outlined" color="secondary">
               <Link
                 to="/donate"
-                style={{ textDecoration: "none", color: "Red" }}
+                style={{
+                  textDecoration: "none",
+                  color: "Red",
+                }}
               >
                 Join Us
               </Link>
             </Button>
+            <span style={{ width: 10 }}></span>
             <Button variant="outlined" color="secondary">
               <Link
                 to="/search"
                 style={{ textDecoration: "none", color: "green" }}
               >
                 Search Donor
-              </Link>
-            </Button>
-            <Button variant="outlined" color="secondary">
-              <Link to="/" style={{ textDecoration: "none", color: "blue" }}>
-                Request Blood
               </Link>
             </Button>
           </div>

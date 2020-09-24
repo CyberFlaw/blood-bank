@@ -19,7 +19,7 @@
     "react-scripts": "^3.4.3"
   },
   "scripts": {
-    "server": "nodemon ./api/app.js",
+    "server": "node ./api/app.jsx",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

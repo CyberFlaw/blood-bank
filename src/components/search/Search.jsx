@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -17,11 +17,6 @@ export default function Search() {
     setBlood(event.target.value);
   };
 
-  const [branch, setBranch] = useState("");
-  const handleBranchChange = (event) => {
-    setBranch(event.target.value);
-  };
-
   const requestOptions = (data) => {
     return {
       method: "POST",
@@ -35,7 +30,6 @@ export default function Search() {
 
   const handleClick = () => {
     let data = {
-      branch: branch,
       bloodtype: blood,
     };
     fetch(targetLink, requestOptions(data))
@@ -104,42 +98,6 @@ export default function Search() {
               </MenuItem>
               <MenuItem value={"AB+"} key={8}>
                 AB+
-              </MenuItem>
-            </Select>
-
-            <InputLabel id="branch" style={{ margin: 10 }}>
-              Branch
-            </InputLabel>
-            <Select
-              labelId="branch"
-              id="branch"
-              value={branch}
-              style={{ margin: 10 }}
-              onChange={handleBranchChange}
-            >
-              <MenuItem value={"CSE"} key={1}>
-                CSE
-              </MenuItem>
-              <MenuItem value={"EC"} key={2}>
-                EC
-              </MenuItem>
-              <MenuItem value={"EEE"} key={3}>
-                EEE
-              </MenuItem>
-              <MenuItem value={"Mech"} key={4}>
-                Mechanical
-              </MenuItem>
-              <MenuItem value={"Production"} key={5}>
-                Production
-              </MenuItem>
-              <MenuItem value={"Chemical"} key={6}>
-                Chemical
-              </MenuItem>
-              <MenuItem value={"Civil"} key={7}>
-                Civil
-              </MenuItem>
-              <MenuItem value={"Architecture"} key={8}>
-                Architecture
               </MenuItem>
             </Select>
 

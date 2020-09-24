@@ -15,13 +15,12 @@ import menu from "../assets/menu.png";
 import about from "../assets/navbar/about.svg";
 import help from "../assets/navbar/help.svg";
 import home from "../assets/navbar/home.svg";
-import donate from "../assets/navbar/donate.svg";
 import search from "../assets/navbar/search.svg";
 import handshake from "../assets/navbar/agreement.svg";
 
 const iconList = [home, help, about];
-const actionIconList = [handshake, search, donate];
-const routes = ["/donate", "/search", "/#"];
+const actionIconList = [handshake, search];
+const routes = ["/donate", "/search"];
 
 const useStyles = makeStyles({
   list: {
@@ -80,7 +79,7 @@ export default function Navbar() {
       </List>
       <Divider />
       <List>
-        {["Join Us", "Search Donor", "Request Blood"].map((text, index) => (
+        {["Join Us", "Search Donor"].map((text, index) => (
           <Link
             to={routes[index]}
             style={{ textDecoration: "none", color: "black" }}
