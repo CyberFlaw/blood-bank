@@ -14,27 +14,14 @@ import "./Donate.min.css";
 
 const targetLink = "http://localhost:8888/api/user/register";
 
-// let data = {
-//   "name": "sadw",
-//   "email": "sissdamp@mail.com",
-//   "phonenumber": "9876543210",
-//   "gender": "male",
-//   "age": 35,
-//   "sem": "s3",
-//   "branch": "cse",
-//   "weight": 52,
-//   "bloodtype": "a+",
-//   "healthcon": "no",
-// };
-
-const requestOptions = data => {
+const requestOptions = (data) => {
   return {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": targetLink,
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   };
 };
 
@@ -106,24 +93,22 @@ export default function Donate() {
   const [health, setHealth] = React.useState("");
   const handleHealthConditionChange = (event) => setHealth(event.target.value);
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     let data = {
-      "name": name,
-      "email": email,
-      "phonenumber": phno,
-      "gender": value,
-      "age": age,
-      "sem": semester,
-      "branch": branch,
-      "weight": weight,
-      "bloodtype": blood,
-      "healthcon": health ? "Yes" : "No"
+      name: name,
+      email: email,
+      phonenumber: phno,
+      gender: value,
+      age: age,
+      sem: semester,
+      branch: branch,
+      weight: weight,
+      bloodtype: blood,
+      healthcon: health ? "Yes" : "No",
     };
     fetch(targetLink, requestOptions(data))
       .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-      console.log("Clicked");
+      .catch(() => alert("Your entry has been added"));
   };
 
   return (
@@ -142,7 +127,7 @@ export default function Donate() {
       <Card className="card" variant="outlined">
         <div className="block">
           <form className={classes.root} noValidate autoComplete="off">
-            <TextField 
+            <TextField
               id="name"
               label="Name"
               value={name}
@@ -279,7 +264,12 @@ export default function Donate() {
               <FormControlLabel value="false" control={<Radio />} label="No" />
             </RadioGroup>
             <div style={{ height: 10 }}></div>
-            <Button variant="contained" color="primary" onClick={handleClick} style={{marginTop: -15}}>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleClick}
+              style={{ marginTop: -15 }}
+            >
               Submit
             </Button>
           </form>
